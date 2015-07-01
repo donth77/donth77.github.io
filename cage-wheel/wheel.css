@@ -1,5 +1,4 @@
 html{
-    /**background-image: url("https://image.tmdb.org/t/p/w780/1eDrr5EXVrkQGYKmyg53BCFceA6.jpg");**/
 
     -webkit-background-size: cover; 
     -moz-background-size: cover;
@@ -7,24 +6,19 @@ html{
     background-size: cover;
 
 }
-.wheel-wrap {
-}
-.marker {
-    position: relative;
-    left: 47.9%;
-    width: 5%;
-}
 .wheel {
     position: absolute;
     top: 4%;
     left: 6%;
     width: 40%;
 }
+.marker {
+    position: relative;
+    left: 49.8%;
+    width: 6%;
+}
 .results{
     text-align: center;
-    /**color: red;
-    -webkit-text-stroke-width: 1px;
-   -webkit-text-stroke-color: black;**/
 }
 h1{
     font-size: 2em;
@@ -38,12 +32,7 @@ h2{
     height: 100%;
     z-index: -9999;
 }
-/**.poster{
-    position: absolute;
-    width: 8%;
-    top: 75%;
-    left: 22%;
-}**/
+
 .embed-container { 
     position: relative;
     padding-bottom: 56.25%; 
