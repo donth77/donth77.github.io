@@ -3,6 +3,8 @@ var movieIDs = [754, 33927, 6963, 1250, 7091, 1830, 7270, 11699, 10427, 451, 125
 ];
 var movieCache = {};
 
+var currentMovie;
+
 $(function() {
     window.WHEEL = {
 
@@ -152,6 +154,8 @@ $(function() {
         var year = releaseDate.getFullYear();
 
         var watchLink = "https://www.fan.tv/movies/" + data.id;
+
+        currentMovie = data.id;
 
         $("#results").html(
             "<h1>" + data.original_title + "(" + year + ")" + "</h1>" +

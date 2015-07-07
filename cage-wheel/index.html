@@ -29,10 +29,16 @@ window.fbAsyncInit = function() {
 }(document, 'script', 'facebook-jssdk'));
 
 function facebookTest(){
+	var title;
+	if(currentMovie){
+		title = movieCache[currentMovie].original_title;
+	}else{
+		title = "Cage Wheel";
+	}
 	FB.ui({
 		method: 'feed',
-		link: 'https://developers.facebook.com/docs/',
-		caption: 'An example caption',
+		link: 'cagewheel.com',
+		caption: title,
 	}, function(response){});
 }
 </script>
