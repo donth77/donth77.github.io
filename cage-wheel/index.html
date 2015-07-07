@@ -1,26 +1,63 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Cage Wheel</title>
-<link rel="stylesheet" href="wheel.css" />
-<audio id="audio">
-	<source src="wheel.mp3" type="audio/mp3" preload="auto"/>
-</audio>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Cage Wheel</title>
+	<link rel="icon" href="favicon.ico" type="image/x-icon"/>
+	<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="wheel.css" />
+	<audio id="audio">
+		<source src="wheel.mp3" type="audio/mp3" preload="auto"/>
+	</audio>
 </head>
+<script>
+window.fbAsyncInit = function() {
+	FB.init({
+		appId      : '140883606242685',
+		xfbml      : true,
+		version    : 'v2.3'
+	});
+};
+
+(function(d, s, id){
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) {return;}
+	js = d.createElement(s); js.id = id;
+	js.src = "https://connect.facebook.net/en_US/sdk.js";
+	fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+function facebookTest(){
+	FB.ui({
+		method: 'feed',
+		link: 'https://developers.facebook.com/docs/',
+		caption: 'An example caption',
+	}, function(response){});
+}
+</script>
 <body>
-    <div class="section group">
-        <div class="col span_1_of_2">
-            <img class="wheel" src="cage-wheel.png">
-            <img class="marker" src="marker.png">
-        </div>
-        <div class="col span_1_of_2">
-         <div id="results" class="results"> </div>
-     </div>
- </div>
-</body>
-<script type="text/javascript" src="jquery-git.js"></script>
-<script type="text/javascript" src="http://ricostacruz.com/jquery.transit/jquery.transit.min.js"></script>
-<script type="text/javascript" src="tmdb.js"></script>
-<script type="text/javascript" src="wheel.js"></script>
-</html>
+	<div id="fb-root"></div>
+
+	<div class="section group">
+		<div class="col span_1_of_2">
+			<img class="wheel" src="cage-wheel.png">
+			<img class="marker" src="marker.png">
+			<!--<a id="button" href="javascript:void(0);">Spin!</a>-->
+		</div>
+		<div class="col span_1_of_2">
+			<div id="results" class="results"></div>
+		</div>
+		<footer>
+			<button onclick="facebookTest();">Share</button>
+			<p>Brought to you by <a style="color: black;" href="https://www.facebook.com/NicCageFilmFestival" target="_blank">Nic Cage Film Festival</a>
+				<br>
+				Powered by <a style="color: black;" href="https://jquery.com/" target="_blank">jQuery</a>, <a style="color: black;" href="http://ricostacruz.com/jquery.transit/" target="_blank">Transit</a>, and <a style="color: black;" href="https://www.themoviedb.org/" target="_blank">TMDb</a></p>
+			</footer>
+		</div>
+	</body>
+	<script type="text/javascript" src="jquery-git.js"></script>
+	<script type="text/javascript" src="http://ricostacruz.com/jquery.transit/jquery.transit.min.js"></script>
+	<script type="text/javascript" src="tmdb.js"></script>
+	<script type="text/javascript" src="wheel.js"></script>
+	</html>

@@ -16,14 +16,25 @@ $(function() {
             this.cache.wheelMarker = $('.marker');
             this.cache.wheelSpinBtn = $('.wheel');
 
-            this.cache.wheelSpinBtn.on('click', function(e) {
+            this.cache.wheelSpinBtn.hover(function(e) {
+             var isTrans = isTransparent(
+                    this.src,
+                    e.pageX - $(this).pageX, 
+                    e.pageY - $(this).pageY 
+                );
+                if(!isTrans){
+                    _this.spin();
+                }
+            });
+
+            /**this.cache.wheelSpinBtn.on('click', function(e) {
                 e.preventDefault();
                 if (!$(this).hasClass('disabled')) {
                     _this.spin();
                     wheelSound.load();
                     wheelSound.play();
                 }
-            });
+            });**/
             this.resetSpin();
 
         },
@@ -161,7 +172,7 @@ $(function() {
             data.trailers.youtube[0].source +
             "' frameborder='0' allowfullscreen></iframe></div>" + 
             "<br>" + 
-            "<a href='" + watchLink + "' target='_blank'>Watch " + data.original_title +  " online</a>");
+            "<a id='watch' href='" + watchLink + "' target='_blank'>Watch " + data.original_title +  " online</a>");
     }
 
     window.WHEEL.init();
