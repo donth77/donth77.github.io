@@ -166,6 +166,7 @@ $(function() {
             "' frameborder='0' allowfullscreen></iframe></div>" + 
             "<br>" + 
             "<a href='" + watchLink + "' target='_blank'>Watch " + data.original_title +  " online</a>");
+        console.log(data);
     }
 
     window.WHEEL.init();
