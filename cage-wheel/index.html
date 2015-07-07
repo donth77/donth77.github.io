@@ -31,7 +31,7 @@ window.fbAsyncInit = function() {
 function facebookTest(){
 	var title, description, image;
 	if(currentMovie){
-		title = "Cage Wheel — " movieCache[currentMovie].original_title;
+		title = "Cage Wheel — " + movieCache[currentMovie].original_title;
 		image = tmdb.images_uri + "/w780" + movieCache[currentMovie].backdrop_path;
 		description = currentQuote;
 	}else{
