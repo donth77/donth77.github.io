@@ -29,27 +29,27 @@ window.fbAsyncInit = function() {
 }(document, 'script', 'facebook-jssdk'));
 
 function facebookTest(){
-	var title, description, image;
+	var name, caption, description, image;
 	if(currentMovie){
-		title = "Cage Wheel — " + movieCache[currentMovie].original_title;
+		name = "Cage Wheel — " + movieCache[currentMovie].original_title;
 		image = tmdb.images_uri + "/w342" + movieCache[currentMovie].poster_path;
-		description = currentQuote;
+		caption = currentQuote;
+		description = ovieCache[currentMovie].overview;
 	}else{
-		description = "Spin the Cage Wheel!";
+		caption = "Spin the Cage Wheel!";
 		image = "http://i.imgur.com/K5CslUK.jpg";
 	}
 	FB.ui({
 		method: 'feed',
 		link: 'cagewheel.com',
-		name: title,
-		caption: description,
+		name: name,
+		caption: caption,
 		picture: image,
 	}, function(response){});
 }
 </script>
 <body>
 	<div id="fb-root"></div>
-
 	<div class="section group">
 		<div class="col span_1_of_2">
 			<img class="wheel" src="cage-wheel.png">
