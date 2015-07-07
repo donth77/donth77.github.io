@@ -29,18 +29,20 @@ window.fbAsyncInit = function() {
 }(document, 'script', 'facebook-jssdk'));
 
 function facebookTest(){
-	var title, image;
+	var title, description, image;
 	if(currentMovie){
-		title = "I landed on " + movieCache[currentMovie].original_title + "!";
+		title = "Cage Wheel: I landed on " + movieCache[currentMovie].original_title + "!";
 		image = tmdb.images_uri + "/w300" + movieCache[currentMovie].poster_path;
+		description = movieCache[currentMovie].overview;
 	}else{
-		title = "Spin the Cage Wheel!";
+		description = "Spin the Cage Wheel!";
 		image = "http://i.imgur.com/K5CslUK.jpg";
 	}
 	FB.ui({
 		method: 'feed',
 		link: 'cagewheel.com',
-		caption: title,
+		name: title,
+		caption: description,
 		picture: image,
 	}, function(response){});
 }
