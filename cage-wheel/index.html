@@ -28,7 +28,7 @@
 	fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 
-function facebookTest(){
+function facebookPost(){
 	var name, caption, description, image;
 	if(currentMovie){
 		name = "Cage Wheel — " + movieCache[currentMovie].original_title;
@@ -78,8 +78,8 @@ window.twttr = (function(d, s, id) {
 		</div>
 		<footer>
 			<!--button onclick="facebookTest();">Share</button>-->
-			<div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count"></div>
-			<a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Hello%20world">Tweet</a>
+			<div class="fb-share-button" data-href="" data-layout="button_count" onclick="facebookPost();"></div>
+			<a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Hello%20world">Tweets</a>
 			<p>Brought to you by <a style="color: black;" href="https://www.facebook.com/NicCageFilmFestival" target="_blank">Nic Cage Film Festival</a>
 				<br>
 				Powered by <a style="color: black;" href="https://jquery.com/" target="_blank">jQuery</a>, <a style="color: black;" href="http://ricostacruz.com/jquery.transit/" target="_blank">Transit</a>, and <a style="color: black;" href="https://www.themoviedb.org/" target="_blank">TMDb</a></p>
