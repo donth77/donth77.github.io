@@ -51,7 +51,7 @@ $(function() {
 
             var rand = Math.random() * 1500;
             var deg = 1500 + Math.round(rand);
-            duration = 17000; 
+            duration = 1000; 
 
             _this.cache.wheelPos = deg;
 
@@ -91,25 +91,7 @@ $(function() {
                     $("#results").show();
                     $("#poster").show();
 
-                    var imageData;
                     var basicData;
-                    /**tmdb.call("/movie/" + id + "/images", {},
-                        function(data){
-                            imageData = data;
-                            $('html').fadeTo('fast', 0.5, function()
-                            {
-                                $(this).css({
-                                    'background-image': 'url(' + tmdb.images_uri + "/w780" + imageData.backdrops[0].file_path + ')'
-                                });
-                            }).fadeTo('slow', 1);
-                            $("#poster").html("<img src='"  + tmdb.images_uri + "/w780" + imageData.backdrops[0].file_path + "'/>")
-                            console.log(imageData);
-
-                        }, 
-                        function(e){
-                           // console.log("Error: "+e)
-                        }
-                        )**/
 
                     if (movieCache[id] == null) {
                         tmdb.call("/movie/" + id, {
@@ -165,7 +147,7 @@ $(function() {
         var releaseDate = new Date(data.release_date);
         var year = releaseDate.getFullYear();
 
-        var watchLink = "https://www.fan.tv/movies/" + data.id;
+        var watchLink = "http://www.fan.tv/movies/" + data.id;
 
         currentMovie = data.id;
 
@@ -178,7 +160,6 @@ $(function() {
             "' frameborder='0' allowfullscreen></iframe></div>" + 
             "<br>" + 
             "<a href='" + watchLink + "' target='_blank'>Watch " + data.original_title +  " online</a>");
-        console.log(data);
     }
 
     window.WHEEL.init();

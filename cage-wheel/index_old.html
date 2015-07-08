@@ -5,7 +5,6 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Cage Wheel</title>
 	<link rel="icon" href="favicon.ico" type="image/x-icon"/>
-	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 	<link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css'>
 	<link rel="stylesheet" href="wheel.css" />
 	<audio id="audio">
@@ -65,18 +64,6 @@ window.twttr = (function(d, s, id) {
  
   return t;
 }(document, "script", "twitter-wjs"));
-
-function sendTweet() {
-	var message = "Check out the Cage Wheel!";
-	var url = "bit.ly/1JT1mCY";
-	if(currentQuote){
-		message = currentQuote;
-	}
-	var queryString;
-	queryString = message + ' ' + url + '&hashtags=CageWheel';
-
- 	$('#twitter-icon').attr('href', 'https://twitter.com/intent/tweet?text=' + queryString);
-}
 </script>
 <body>
 	<div id="fb-root"></div>
@@ -84,17 +71,19 @@ function sendTweet() {
 		<div class="col span_1_of_2">
 			<img class="wheel" src="cage-wheel.png">
 			<img class="marker" src="marker.png">
+			<!--<a id="button" href="javascript:void(0);">Spin!</a>-->
 		</div>
 		<div class="col span_1_of_2">
-			<div id="results" class="results"><h1>Click the wheel to spin.</h1></div>
+			<div id="results" class="results">Click the wheel to spin.</div>
 		</div>
 		<footer>
-			<a id="twitter-icon" href="https://twitter.com/intent/tweet?text=a" onmouseenter="sendTweet();"><i class="icon-twitter"></i></a>
-			&nbsp;
-			<div id="facebook-icon" onclick="facebookPost();" ><i class="icon-facebook"></i></div>
-			<p>Brought to you by <a id="footlink" href="https://www.facebook.com/NicCageFilmFestival" target="_blank">Nic Cage Film Festival</a>
+			<!--<a href="https://twitter.com/intent/tweet?text=Hello%20world" ><i class="icon-twitter"></i></a>
+			<div onclick="facebookPost();" ><i class="icon-facebook"></i></div>-->
+			<!--<button onclick="facebookPost();">Share</button>
+			<a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Hello%20world">Tweets</a>-->
+			<p>Brought to you by <a style="color: black;" href="https://www.facebook.com/NicCageFilmFestival" target="_blank">Nic Cage Film Festival</a>
 				<br>
-				Powered by <a id="footlink" href="https://jquery.com/" target="_blank">jQuery</a>, <a id="footlink"  href="http://ricostacruz.com/jquery.transit/" target="_blank">Transit</a>, and <a id="footlink" href="https://www.themoviedb.org/" target="_blank">TMDb</a></p>
+				Powered by <a style="color: black;" href="https://jquery.com/" target="_blank">jQuery</a>, <a style="color: black;" href="http://ricostacruz.com/jquery.transit/" target="_blank">Transit</a>, and <a style="color: black;" href="https://www.themoviedb.org/" target="_blank">TMDb</a></p>
 			</footer>
 		</div>
 	</body>
