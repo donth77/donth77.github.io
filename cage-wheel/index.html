@@ -12,19 +12,19 @@
 	</audio>
 </head>
 <script>
-window.fbAsyncInit = function() {
+/**window.fbAsyncInit = function() {
 	FB.init({
 		appId      : '140883606242685',
 		xfbml      : true,
 		version    : 'v2.3'
 	});
-};
+};**/
 
 (function(d, s, id){
 	var js, fjs = d.getElementsByTagName(s)[0];
 	if (d.getElementById(id)) {return;}
 	js = d.createElement(s); js.id = id;
-	js.src = "https://connect.facebook.net/en_US/sdk.js";
+	js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=140883606242685";
 	fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 
@@ -48,6 +48,22 @@ function facebookTest(){
 		picture: image,
 	}, function(response){});
 }
+window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+ 
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+ 
+  return t;
+}(document, "script", "twitter-wjs"));
 </script>
 <body>
 	<div id="fb-root"></div>
@@ -61,7 +77,9 @@ function facebookTest(){
 			<div id="results" class="results">Click the wheel to spin.</div>
 		</div>
 		<footer>
-			<button onclick="facebookTest();">Share</button>
+			<!--button onclick="facebookTest();">Share</button>-->
+			<div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count"></div>
+			<a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Hello%20world">Tweet</a>
 			<p>Brought to you by <a style="color: black;" href="https://www.facebook.com/NicCageFilmFestival" target="_blank">Nic Cage Film Festival</a>
 				<br>
 				Powered by <a style="color: black;" href="https://jquery.com/" target="_blank">jQuery</a>, <a style="color: black;" href="http://ricostacruz.com/jquery.transit/" target="_blank">Transit</a>, and <a style="color: black;" href="https://www.themoviedb.org/" target="_blank">TMDb</a></p>

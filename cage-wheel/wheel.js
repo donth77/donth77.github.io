@@ -4,13 +4,13 @@ var movieIDs = [754, 33927, 6963, 1250, 7091, 1830, 7270, 11699, 10427, 451, 125
 var movieCache = {};
 
 var movieQuotes = ["I want to take his face... off.", "Fuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuck!", "People don't throw things at me any more. Maybe because I carry a bow around.", 
-"Let's ride!", "I'm a vampire! I'm a vampire! I'm a vampire!", "There are two types of tragedies in life. One is not getting what you want, the other is getting it.", 
-"Hey have you ever been dragged to the sidewalk and beaten till you PISSED... BLOOD!", "Shoot him again! His soul's still dancing!", "Adios, Red Rock.", 
-"I don't know if I started drinking 'cause my wife left me or my wife left me 'cause I started drinking, but fuck it anyway.", "Yoohoo! Can I get a room?", "This is a snakeskin jacket!",
-"Put... the bunny... back... in the box.", "You are what you love, not what loves you.", "I've seen every possible ending. None of them are good for you.",
+"Let's ride!", "I'm a vampire! I'm a vampire! I'm a vampire!", "There are two types of tragedies in life.", 
+"Hey have you ever been beaten till you PISSED... BLOOD!", "Shoot him again! His soul's still dancing!", "Adios, Red Rock.", 
+"I don't know if I started drinking 'cause my wife left me but fuck it anyway.", "Yoohoo! Can I get a room?", "This is a snakeskin jacket!",
+"Put... the bunny... back... in the box.", "You are what you love, not what loves you.", "I've seen every possible ending.",
 "Oh, child... You always knock me for a loop!", "All right, but when they attack the car, save the radio.", "OH, NO! NOT THE BEES! NOT THE BEES!",
-"I'm gonna steal the Declaration of Independence!", "I went through a windshield at 4 o'clock one morning and I don't give a fuck.", "I'll be taking these Huggies and whatever cash ya got.",
-"I just stole fifty cars in one night!", "I lost my hand! I lost my bride!", "I would rather have had one breath of her hair, one kiss of her mouth, one touch of her hand, than eternity without it."]
+"I'm gonna steal the Declaration of Independence!", "I went through a windshield at 4 AM and I don't give a fuck.", "I'll be taking these Huggies and whatever cash ya got.",
+"I just stole fifty cars in one night!", "I lost my hand! I lost my bride!", "I would rather have had one touch of her hand than eternity without it."]
 
 
 var currentMovie, currentQuote;
