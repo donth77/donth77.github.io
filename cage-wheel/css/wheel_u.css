@@ -25,21 +25,6 @@ a:hover{
      font-family: initial !important;
      color: black;
 }
-#twitter-icon{
-    color: #4099ff;
-}
-#twitter-icon:hover{
-    color: navy;
-    text-decoration: none;
-}
-#facebook-icon{
-    color: #3B5998;
-    display: inline-block;
-    cursor: pointer;
-}
-#facebook-icon:hover{
-    color: navy;
-}
 .wheel {
     position: absolute;
     top: 4%;
