@@ -51,7 +51,7 @@ $(function() {
 
             var rand = Math.random() * 1500;
             var deg = 1500 + Math.round(rand);
-            duration = 17000; 
+            duration = 1000; 
 
             _this.cache.wheelPos = deg;
 

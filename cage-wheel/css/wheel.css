@@ -34,6 +34,9 @@ h2{
     font-weight: 400;
     text-align: center;
 }
+.box2{
+    height: 100%;
+}
 .results{
     height: 100%;
     text-align: center;
@@ -42,7 +45,7 @@ h2{
     top: 0; 
     left: 0;
     width: 100%; 
-    height: 100%; 
+    height: 25vw; 
 }
 #footlink{
      font-family: initial !important;
@@ -53,7 +56,9 @@ h2{
   width: 100%;
   max-width: 100vw;
 }
-.content{
+.column{
+    height: 100%;
+    width: 100%;
 }
 .row{
     /**margin-left: 0;
