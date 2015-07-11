@@ -18,12 +18,16 @@ h1 {
     font-family: 'Oswald', sans-serif;
     font-weight: 400;
     text-align: center;
+    padding: 0;
+    margin: 0.3em;
 }
 h2 {
     font-size: 75%;
     font-family: 'Oswald', sans-serif;
     font-weight: 400;
     text-align: center;
+    margin: 0;
+    padding: 0;
 }
 .box2 {
     height: 100%;
@@ -41,7 +45,9 @@ h2 {
         top: 0;
         left: 0;
         width: 100%;
-        height: 47vw;
+        margin: 0;
+        padding: 0;
+        height: 30vh;
     }
     .container {
         position: absolute;
@@ -100,6 +106,8 @@ h2 {
         left: 0;
         width: 100%;
         height: 27vw;
+        margin: 0;
+        padding: 0;
     }
     .column {
         margin-left: 0;
