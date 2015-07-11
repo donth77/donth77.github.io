@@ -41,11 +41,24 @@ h2{
     height: 100%;
     text-align: center;
 }
-.embed-container iframe, .embed-container object, .embed-container embed { 
-    top: 0; 
-    left: 0;
-    width: 100%; 
-    height: 25vw; 
+
+/* Larger than phablet (also point when grid becomes active) */
+@media (min-width: 550px) {
+    .embed-container iframe, .embed-container object, .embed-container embed { 
+        top: 0; 
+        left: 0;
+        width: 100%; 
+        height: 25vw;
+    }
+
+}
+@media (max-width: 550px) {
+    .embed-container iframe, .embed-container object, .embed-container embed { 
+        top: 0; 
+        left: 0;
+        width: 100%; 
+    }
+
 }
 #footlink{
      font-family: initial !important;
