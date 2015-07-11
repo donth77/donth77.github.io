@@ -151,9 +151,16 @@ $(function() {
 
         currentMovie = data.id;
 
+        var tagline;
+        if(data.id == 2757){
+            tagline = "Charlie Kaufman writes the way he lives... With Great Difficulty";
+        }else{
+            tagline = data.tagline;
+        }
+
         $("#results").html(
             "<h1>" + data.original_title + "(" + year + ")" + "</h1>" +
-            "<h2>" + data.tagline + "</h2>" +
+            "<h2>" + tagline + "</h2>" +
             "<br>" +
             "<div class='embed-container'><iframe src='http://www.youtube.com/embed/" + 
             data.trailers.youtube[0].source +
