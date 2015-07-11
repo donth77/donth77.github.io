@@ -98,8 +98,10 @@ h2 {
     .marker {
         position: absolute;
         width: 3vw;
-        left: 21.5vw;
-        top: 2.8vh;
+        left: 21.4vw;
+        top: 1vh;
+        margin: auto;
+        display: block;
     }
     .embed-container iframe,
     .embed-container object,
@@ -142,9 +144,10 @@ h2 {
 @media (min-width: 750px) {
     .marker {
         position: absolute;
-        width: 3vw;
         left: 21.8vw;
-        top: 3.1vh;
+        top: 1.6vh;
+        margin: auto;
+        display: block;
     }
 }
 /* Larger than desktop */
@@ -152,9 +155,29 @@ h2 {
 @media (min-width: 1000px) {
     .marker {
         position: absolute;
-        width: 3vw;
-        left: 22.2vw;
-        top: 4.1vh;
+        left: 22vw;
+        top: 2vh;
+        margin: auto;
+        display: block;
+    }
+}
+
+@media (min-height: 1000px) {
+    .marker {
+        position: absolute;
+        left: 21.5vw;
+        top: 1vh;
+        margin: auto;
+        display: block;
+    }
+}
+@media (min-height: 1500px) {
+    .marker {
+        position: absolute;
+        left: 21.9vw;
+        top: 1vh;
+        margin: auto;
+        display: block;
     }
 }
 .content,
@@ -174,13 +197,6 @@ h2 {
 .column {
     height: 100%;
     width: 100%;
-}
-.row {
-    /**margin-left: 0;
-    left: 0;
-    top: 0;
-    width: 100vw;
-    overflow:hidden;**/
 }
 .wheel {
     position: relative;

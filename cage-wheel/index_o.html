@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Cage Wheel</title>
+	<link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
+	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+	<link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css'>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/bootstrap-social.css">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/skeleton.css">
+	<link rel="stylesheet" href="css/wheel.css" />
+	<link rel="stylesheet" href="css/rrssb.css" />
+
+	<!--<audio id="audio">
+		<source src="audio/wheel.mp3" type="audio/mp3" preload="auto"/>
+	</audio>-->
+</head>
+<script>
+window.fbAsyncInit = function() {
+	FB.init({
+		appId      : '140883606242685',
+		xfbml      : true,
+		version    : 'v2.3'
+	});
+};
+
+(function(d, s, id){
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) {return;}
+	js = d.createElement(s); js.id = id;
+	js.src = "https://connect.facebook.net/en_US/sdk.js";
+	fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+function facebookPost(){
+	var name, caption, description, image;
+	if(currentMovie){
+		name = "Cage Wheel — " + movieCache[currentMovie].original_title;
+		image = tmdb.images_uri + "/w342" + movieCache[currentMovie].poster_path;
+		caption = currentQuote;
+		description = movieCache[currentMovie].overview;
+	}else{
+		caption = "Spin the Cage Wheel!";
+		image = "http://i.imgur.com/K5CslUK.jpg";
+	}
+	FB.ui({
+		method: 'feed',
+		link: 'cagewheel.com',
+		name: name,
+		caption: caption,
+		description: description,
+		picture: image,
+	}, function(response){});
+}
+window.twttr = (function(d, s, id) {
+	var js, fjs = d.getElementsByTagName(s)[0],
+	t = window.twttr || {};
+	if (d.getElementById(id)) return t;
+	js = d.createElement(s);
+	js.id = id;
+	js.src = "https://platform.twitter.com/widgets.js";
+	fjs.parentNode.insertBefore(js, fjs);
+	
+	t._e = [];
+	t.ready = function(f) {
+		t._e.push(f);
+	};
+	
+	return t;
+}(document, "script", "twitter-wjs"));
+
+function sendTweet() {
+	var message = "Check out the Cage Wheel!";
+	var url = "bit.ly/1JT1mCY";
+	console.log(currentQuote);
+	if(currentQuote){
+		message = currentQuote;
+	}
+	var queryString;
+	queryString = message + ' ' + url + '&hashtags=CageWheel';
+
+	$('#twitter-icon').attr('href', 'https://twitter.com/intent/tweet?text=' + queryString);
+}
+</script>
+<body>
+	<div id="fb-root"></div>
+	<div class="container">
+
+		<section class="content">
+			<div class="row">
+				<div class="one-half column">
+					<div class="box1">
+						<img class="wheel" src="images/cage-wheel.png">
+						<img class="marker" src="images/marker.png">
+					</div>
+				</div>
+				<div class="one-half column">
+					<div class="box2">
+						<div align="center" id="results" class="results"><h1>Click the wheel to spin.</h1></div>
+						<div align="center"id="footer" onmouseover="sendTweet();">
+							  <a id="twitter-icon" class="btn btn-social-icon btn-twitter" href="https://twitter.com/intent/tweet?text=Check%20out%20the%20Cage%20Wheel!%20bit.ly/1JT1mCY&amp;hashtags=CageWheel" onmouseenter="sendTweet();" onclick="sendTweet();">
+    								<i class="icon-twitter"></i>
+  								</a>
+		
+							&nbsp;
+							<a class="btn btn-social-icon btn-facebook" onclick="facebookPost();" ><i class="icon-facebook"></i></a>
+							<p>Brought to you by <a id="footlink" href="https://www.facebook.com/NicCageFilmFestival" target="_blank">Nic Cage Film Festival</a>
+								<br>
+								Powered by <a id="footlink" href="https://jquery.com/" target="_blank">jQuery</a>, <a id="footlink"  href="http://ricostacruz.com/jquery.transit/" target="_blank">Transit</a>, and <a id="footlink" href="https://www.themoviedb.org/" target="_blank">TMDb</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+
+
+		<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-64923708-1', 'auto');
+		ga('send', 'pageview');
+
+		</script>
+		<script type="text/javascript" src="js/jquery-git.js"></script>
+		<script type="text/javascript" src="http://ricostacruz.com/jquery.transit/jquery.transit.min.js"></script>
+		<script type="text/javascript" src="js/rrssb.min.js"></script>
+		<script type="text/javascript" src="js/tmdb.js"></script>
+		<script type="text/javascript" src="js/wheel.js"></script>
+		<script src="js/rrssb.min.js"></script>
+	</body>
+	</html>

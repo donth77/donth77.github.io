@@ -13,77 +13,13 @@
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/skeleton.css">
 	<link rel="stylesheet" href="css/wheel.css" />
-	<link rel="stylesheet" href="css/rrssb.css" />
 
-	<!--<audio id="audio">
+	<audio id="audio">
 		<source src="audio/wheel.mp3" type="audio/mp3" preload="auto"/>
-	</audio>-->
+	</audio>
 </head>
 <script>
-window.fbAsyncInit = function() {
-	FB.init({
-		appId      : '140883606242685',
-		xfbml      : true,
-		version    : 'v2.3'
-	});
-};
-
-(function(d, s, id){
-	var js, fjs = d.getElementsByTagName(s)[0];
-	if (d.getElementById(id)) {return;}
-	js = d.createElement(s); js.id = id;
-	js.src = "https://connect.facebook.net/en_US/sdk.js";
-	fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-
-function facebookPost(){
-	var name, caption, description, image;
-	if(currentMovie){
-		name = "Cage Wheel — " + movieCache[currentMovie].original_title;
-		image = tmdb.images_uri + "/w342" + movieCache[currentMovie].poster_path;
-		caption = currentQuote;
-		description = movieCache[currentMovie].overview;
-	}else{
-		caption = "Spin the Cage Wheel!";
-		image = "http://i.imgur.com/K5CslUK.jpg";
-	}
-	FB.ui({
-		method: 'feed',
-		link: 'cagewheel.com',
-		name: name,
-		caption: caption,
-		description: description,
-		picture: image,
-	}, function(response){});
-}
-window.twttr = (function(d, s, id) {
-	var js, fjs = d.getElementsByTagName(s)[0],
-	t = window.twttr || {};
-	if (d.getElementById(id)) return t;
-	js = d.createElement(s);
-	js.id = id;
-	js.src = "https://platform.twitter.com/widgets.js";
-	fjs.parentNode.insertBefore(js, fjs);
-	
-	t._e = [];
-	t.ready = function(f) {
-		t._e.push(f);
-	};
-	
-	return t;
-}(document, "script", "twitter-wjs"));
-
-function sendTweet() {
-	var message = "Check out the Cage Wheel!";
-	var url = "bit.ly/1JT1mCY";
-	if(currentQuote){
-		message = currentQuote;
-	}
-	var queryString;
-	queryString = message + ' ' + url + '&hashtags=CageWheel';
-
-	$('#twitter-icon').attr('href', 'https://twitter.com/intent/tweet?text=' + queryString);
-}
+var _0x3f10=["\x66\x62\x41\x73\x79\x6E\x63\x49\x6E\x69\x74","\x31\x34\x30\x38\x38\x33\x36\x30\x36\x32\x34\x32\x36\x38\x35","\x76\x32\x2E\x33","\x69\x6E\x69\x74","\x73\x63\x72\x69\x70\x74","\x66\x61\x63\x65\x62\x6F\x6F\x6B\x2D\x6A\x73\x73\x64\x6B","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x73\x42\x79\x54\x61\x67\x4E\x61\x6D\x65","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64","\x63\x72\x65\x61\x74\x65\x45\x6C\x65\x6D\x65\x6E\x74","\x69\x64","\x73\x72\x63","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x63\x6F\x6E\x6E\x65\x63\x74\x2E\x66\x61\x63\x65\x62\x6F\x6F\x6B\x2E\x6E\x65\x74\x2F\x65\x6E\x5F\x55\x53\x2F\x73\x64\x6B\x2E\x6A\x73","\x69\x6E\x73\x65\x72\x74\x42\x65\x66\x6F\x72\x65","\x70\x61\x72\x65\x6E\x74\x4E\x6F\x64\x65","\x43\x61\x67\x65\x20\x57\x68\x65\x65\x6C\x20\u2014\x20","\x6F\x72\x69\x67\x69\x6E\x61\x6C\x5F\x74\x69\x74\x6C\x65","\x69\x6D\x61\x67\x65\x73\x5F\x75\x72\x69","\x2F\x77\x33\x34\x32","\x70\x6F\x73\x74\x65\x72\x5F\x70\x61\x74\x68","\x6F\x76\x65\x72\x76\x69\x65\x77","\x53\x70\x69\x6E\x20\x74\x68\x65\x20\x43\x61\x67\x65\x20\x57\x68\x65\x65\x6C\x21","\x68\x74\x74\x70\x3A\x2F\x2F\x69\x2E\x69\x6D\x67\x75\x72\x2E\x63\x6F\x6D\x2F\x4B\x35\x43\x73\x6C\x55\x4B\x2E\x6A\x70\x67","\x66\x65\x65\x64","\x63\x61\x67\x65\x77\x68\x65\x65\x6C\x2E\x63\x6F\x6D","\x75\x69","\x74\x77\x74\x74\x72","\x74\x77\x69\x74\x74\x65\x72\x2D\x77\x6A\x73","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x70\x6C\x61\x74\x66\x6F\x72\x6D\x2E\x74\x77\x69\x74\x74\x65\x72\x2E\x63\x6F\x6D\x2F\x77\x69\x64\x67\x65\x74\x73\x2E\x6A\x73","\x5F\x65","\x72\x65\x61\x64\x79","\x70\x75\x73\x68","\x43\x68\x65\x63\x6B\x20\x6F\x75\x74\x20\x74\x68\x65\x20\x43\x61\x67\x65\x20\x57\x68\x65\x65\x6C\x21","\x62\x69\x74\x2E\x6C\x79\x2F\x31\x4A\x54\x31\x6D\x43\x59","\x20","\x26\x68\x61\x73\x68\x74\x61\x67\x73\x3D\x43\x61\x67\x65\x57\x68\x65\x65\x6C","\x68\x72\x65\x66","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x74\x77\x69\x74\x74\x65\x72\x2E\x63\x6F\x6D\x2F\x69\x6E\x74\x65\x6E\x74\x2F\x74\x77\x65\x65\x74\x3F\x74\x65\x78\x74\x3D","\x61\x74\x74\x72","\x23\x74\x77\x69\x74\x74\x65\x72\x2D\x69\x63\x6F\x6E"];window[_0x3f10[0]]=function(){FB[_0x3f10[3]]({appId:_0x3f10[1],xfbml:true,version:_0x3f10[2]})};(function(_0x8f9ax1,_0x8f9ax2,_0x8f9ax3){var _0x8f9ax4,_0x8f9ax5=_0x8f9ax1[_0x3f10[6]](_0x8f9ax2)[0];if(_0x8f9ax1[_0x3f10[7]](_0x8f9ax3)){return };_0x8f9ax4=_0x8f9ax1[_0x3f10[8]](_0x8f9ax2);_0x8f9ax4[_0x3f10[9]]=_0x8f9ax3;_0x8f9ax4[_0x3f10[10]]=_0x3f10[11];_0x8f9ax5[_0x3f10[13]][_0x3f10[12]](_0x8f9ax4,_0x8f9ax5);}(document,_0x3f10[4],_0x3f10[5]));function facebookPost(){var _0x8f9ax7,_0x8f9ax8,_0x8f9ax9,_0x8f9axa;if(currentMovie){_0x8f9ax7=_0x3f10[14]+movieCache[currentMovie][_0x3f10[15]];_0x8f9axa=tmdb[_0x3f10[16]]+_0x3f10[17]+movieCache[currentMovie][_0x3f10[18]];_0x8f9ax8=currentQuote;_0x8f9ax9=movieCache[currentMovie][_0x3f10[19]];}else {_0x8f9ax8=_0x3f10[20];_0x8f9axa=_0x3f10[21];};FB[_0x3f10[24]]({method:_0x3f10[22],link:_0x3f10[23],name:_0x8f9ax7,caption:_0x8f9ax8,description:_0x8f9ax9,picture:_0x8f9axa},function(_0x8f9axb){});}window[_0x3f10[25]]=(function(_0x8f9ax1,_0x8f9ax2,_0x8f9ax3){var _0x8f9ax4,_0x8f9ax5=_0x8f9ax1[_0x3f10[6]](_0x8f9ax2)[0],_0x8f9axc=window[_0x3f10[25]]||{};if(_0x8f9ax1[_0x3f10[7]](_0x8f9ax3)){return _0x8f9axc};_0x8f9ax4=_0x8f9ax1[_0x3f10[8]](_0x8f9ax2);_0x8f9ax4[_0x3f10[9]]=_0x8f9ax3;_0x8f9ax4[_0x3f10[10]]=_0x3f10[27];_0x8f9ax5[_0x3f10[13]][_0x3f10[12]](_0x8f9ax4,_0x8f9ax5);_0x8f9axc[_0x3f10[28]]=[];_0x8f9axc[_0x3f10[29]]=function(_0x8f9axd){_0x8f9axc[_0x3f10[28]][_0x3f10[30]](_0x8f9axd)};return _0x8f9axc;}(document,_0x3f10[4],_0x3f10[26]));function sendTweet(){var _0x8f9axf=_0x3f10[31];var _0x8f9ax10=_0x3f10[32];if(currentQuote){_0x8f9axf=currentQuote};var _0x8f9ax11;_0x8f9ax11=_0x8f9axf+_0x3f10[33]+_0x8f9ax10+_0x3f10[34];$(_0x3f10[38])[_0x3f10[37]](_0x3f10[35],_0x3f10[36]+_0x8f9ax11);}
 </script>
 <body>
 	<div id="fb-root"></div>
@@ -100,8 +36,8 @@ function sendTweet() {
 				<div class="one-half column">
 					<div class="box2">
 						<div align="center" id="results" class="results"><h1>Click the wheel to spin.</h1></div>
-						<div align="center"id="footer">
-							  <a class="btn btn-social-icon btn-twitter" href="https://twitter.com/intent/tweet?text=Check%20out%20the%20Cage%20Wheel!%20bit.ly/1JT1mCY&amp;hashtags=CageWheel" onmouseenter="sendTweet();" onclick="sendTweet();">
+						<div align="center"id="footer" onmouseover="sendTweet();">
+							  <a id="twitter-icon" class="btn btn-social-icon btn-twitter" href="https://twitter.com/intent/tweet?text=Check%20out%20the%20Cage%20Wheel!%20bit.ly/1JT1mCY&amp;hashtags=CageWheel" onmouseenter="sendTweet();" onclick="sendTweet();">
     								<i class="icon-twitter"></i>
   								</a>
 		
@@ -130,9 +66,7 @@ function sendTweet() {
 		</script>
 		<script type="text/javascript" src="js/jquery-git.js"></script>
 		<script type="text/javascript" src="http://ricostacruz.com/jquery.transit/jquery.transit.min.js"></script>
-		<script type="text/javascript" src="js/rrssb.min.js"></script>
 		<script type="text/javascript" src="js/tmdb.js"></script>
 		<script type="text/javascript" src="js/wheel.js"></script>
-		<script src="js/rrssb.min.js"></script>
 	</body>
 	</html>
