@@ -3,14 +3,18 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Cage Wheel</title>
 	<link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
 	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 	<link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css'>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/bootstrap-social.css">
 	<link rel="stylesheet" href="css/normalize.css">
-  	<link rel="stylesheet" href="css/skeleton.css">
+	<link rel="stylesheet" href="css/skeleton.css">
 	<link rel="stylesheet" href="css/wheel.css" />
+	<link rel="stylesheet" href="css/rrssb.css" />
+
 	<!--<audio id="audio">
 		<source src="audio/wheel.mp3" type="audio/mp3" preload="auto"/>
 	</audio>-->
@@ -96,33 +100,39 @@ function sendTweet() {
 				<div class="one-half column">
 					<div class="box2">
 						<div align="center" id="results" class="results"><h1>Click the wheel to spin.</h1></div>
-							<footer>
-
-	<p>Brought to you by <a id="footlink" href="https://www.facebook.com/NicCageFilmFestival" target="_blank">Nic Cage Film Festival</a>
-		<br>
-		Powered by <a id="footlink" href="https://jquery.com/" target="_blank">jQuery</a>, <a id="footlink"  href="http://ricostacruz.com/jquery.transit/" target="_blank">Transit</a>, and <a id="footlink" href="https://www.themoviedb.org/" target="_blank">TMDb</a></p>
-	</footer>
+						<div id="footer">
+							  <a class="btn btn-social-icon btn-twitter" href="https://twitter.com/intent/tweet?text=Check%20out%20the%20Cage%20Wheel!%20bit.ly/1JT1mCY&amp;hashtags=CageWheel" onmouseenter="sendTweet();" onclick="sendTweet();">
+    								<i class="icon-twitter"></i>
+  								</a>
+		
+							&nbsp;
+							<a class="btn btn-social-icon btn-facebook" onclick="facebookPost();" ><i class="icon-facebook"></i></a>
+							<p>Brought to you by <a id="footlink" href="https://www.facebook.com/NicCageFilmFestival" target="_blank">Nic Cage Film Festival</a>
+								<br>
+								Powered by <a id="footlink" href="https://jquery.com/" target="_blank">jQuery</a>, <a id="footlink"  href="http://ricostacruz.com/jquery.transit/" target="_blank">Transit</a>, and <a id="footlink" href="https://www.themoviedb.org/" target="_blank">TMDb</a></p>
+							</div>
+						</div>
 					</div>
 				</div>
-			</div><!--end of .row-->
-		</section>
-	</div><!--end of .container-->
+			</section>
+		</div>
 
 
-	<script>
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-	ga('create', 'UA-64923708-1', 'auto');
-	ga('send', 'pageview');
+		ga('create', 'UA-64923708-1', 'auto');
+		ga('send', 'pageview');
 
-	</script>
-	<script type="text/javascript" src="js/jquery-git.js"></script>
-	<script type="text/javascript" src="http://ricostacruz.com/jquery.transit/jquery.transit.min.js"></script>
-	<script type="text/javascript" src="js/rrssb.min.js"></script>
-	<script type="text/javascript" src="js/tmdb.js"></script>
-	<script type="text/javascript" src="js/wheel.js"></script>
-</body>
-</html>
+		</script>
+		<script type="text/javascript" src="js/jquery-git.js"></script>
+		<script type="text/javascript" src="http://ricostacruz.com/jquery.transit/jquery.transit.min.js"></script>
+		<script type="text/javascript" src="js/rrssb.min.js"></script>
+		<script type="text/javascript" src="js/tmdb.js"></script>
+		<script type="text/javascript" src="js/wheel.js"></script>
+		<script src="js/rrssb.min.js"></script>
+	</body>
+	</html>
