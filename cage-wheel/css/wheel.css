@@ -6,21 +6,12 @@ body {
     width: 100%;
     background-color: #ccc;
 }
-footer {
-    text-align: center;
-    width: 100%;
-    position: absolute;
-    bottom: 0px;
-}
-footer p {
-    font-size: 50%;
-}
 a {
     color: blue;
     text-decoration: none;
 }
 a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 h1 {
     font-size: 150%;
@@ -58,8 +49,17 @@ h2 {
         max-width: 100vw;
         height: 100%;
     }
+    footer {
+        text-align: center;
+        width: 100%;
+        bottom: 0;
+    }
+    footer p {
+        font-size: 50%;
+    }
 }
 /*Larger than 0 */
+
 @media (min-width: 0px) {
     .marker {
         position: absolute;
@@ -69,6 +69,7 @@ h2 {
     }
 }
 /* Larger than mobile */
+
 @media (min-width: 400px) {
     .marker {
         position: absolute;
@@ -106,6 +107,16 @@ h2 {
         max-width: 100vw;
         height: 100%;
     }
+    footer {
+        text-align: center;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        position: fixed;
+    }
+    footer p {
+        font-size: 50%;
+    }
 }
 /* Larger than tablet */
 
@@ -137,6 +148,9 @@ h2 {
 #footlink {
     font-family: initial !important;
     color: black;
+}
+#footlink:hover {
+    text-decoration: underline;
 }
 .column {
     height: 100%;

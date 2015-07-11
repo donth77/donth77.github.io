@@ -159,7 +159,7 @@ $(function() {
             data.trailers.youtube[0].source +
             "' frameborder='0' allowfullscreen></iframe></div>" + 
             "<br>" + 
-            "<a href='" + watchLink + "' target='_blank'>Watch " + data.original_title +  " online</a>");
+            "<a class='button button-primary' href='" + watchLink + "' target='_blank'>Watch " + data.original_title +  " online</a>");
     }
 
     window.WHEEL.init();
