@@ -79,6 +79,26 @@ h2 {
         left: 46.9vw;
         top: 0.2vh;
     }
+    #wheel1-thumb{
+        width: 12%;
+        display: inline-block;
+        margin-bottom: 4%;
+    }
+    #wheel2-thumb{
+        width: 12%;
+        display: inline-block;
+        margin-bottom: 4%;
+    }
+    #wheel3-thumb{
+        width: 12%;
+        display: inline-block;
+        margin-bottom: 4%;
+    }
+    #mystery-thumb{
+        width: 12%;
+        display: inline-block;
+        margin-bottom: 4%;
+    }
 }
 /* Larger than mobile */
 
@@ -90,6 +110,26 @@ h2 {
         margin: auto;
         display: block;
         z-index: 9999;
+    }
+    #wheel1-thumb{
+        width: 12%;
+        display: inline-block;
+        margin-bottom: 4%;
+    }
+    #wheel2-thumb{
+        width: 12%;
+        display: inline-block;
+        margin-bottom: 4%;
+    }
+    #wheel3-thumb{
+        width: 12%;
+        display: inline-block;
+        margin-bottom: 4%;
+    }
+    #mystery-thumb{
+        width: 12%;
+        display: inline-block;
+        margin-bottom: 4%;
     }
 }
 /* Larger than phablet (also point when grid becomes active) */
@@ -138,6 +178,26 @@ h2 {
         margin: 0;
 
     }
+    #wheel1-thumb{
+        width: 12%;
+        display: inline-block;
+        margin-bottom: 4%;
+    }
+    #wheel2-thumb{
+        width: 12%;
+        display: inline-block;
+        margin-bottom: 4%;
+    }
+    #wheel3-thumb{
+        width: 12%;
+        display: inline-block;
+        margin-bottom: 4%;
+    }
+    #mystery-thumb{
+        width: 12%;
+        display: inline-block;
+        margin-bottom: 4%;
+    }
 }
 /* Larger than tablet */
 
@@ -149,6 +209,26 @@ h2 {
         margin: auto;
         display: block;
     }
+    #wheel1-thumb{
+        width: 10%;
+        display: inline-block;
+        margin-bottom: 2%;
+    }
+    #wheel2-thumb{
+        width: 10%;
+        display: inline-block;
+        margin-bottom: 2%;
+    }
+    #wheel3-thumb{
+        width: 10%;
+        display: inline-block;
+        margin-bottom: 2%;
+    }
+    #mystery-thumb{
+        width: 10%;
+        display: inline-block;
+        margin-bottom: 2%;
+    }
 }
 /* Larger than desktop */
 
@@ -159,6 +239,26 @@ h2 {
         top: 2vh;
         margin: auto;
         display: block;
+    }
+    #wheel1-thumb{
+        width: 7%;
+        display: inline-block;
+        margin-bottom: 1%;
+    }
+    #wheel2-thumb{
+        width: 7%;
+        display: inline-block;
+        margin-bottom: 1%;
+    }
+    #wheel3-thumb{
+        width: 7%;
+        display: inline-block;
+        margin-bottom: 1%;
+    }
+    #mystery-thumb{
+        width: 7%;
+        display: inline-block;
+        margin-bottom: 1%;
     }
 }
 
@@ -224,46 +324,6 @@ h2 {
     margin: auto;
 }
 
-h3{
-    font-size: 75%;
-    font-family: 'Oswald', sans-serif;
-    font-weight: 400;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    letter-spacing: 0.04em;
-    display: block;
-    left: 55%;
-}
-
-select{
-    position: relative;
-    display: block;
-    left: 55%;
-    width: 15%;
-    height: 30px;
-}
-
-#wheel1-thumb{
-    width: 7%;
-    display: inline-block;
-    margin-bottom: 1%;
-}
-#wheel2-thumb{
-    width: 7%;
-    display: inline-block;
-    margin-bottom: 1%;
-}
-#wheel3-thumb{
-    width: 7%;
-    display: inline-block;
-    margin-bottom: 1%;
-}
-#mystery-thumb{
-    width: 7%;
-    display: inline-block;
-    margin-bottom: 1%;
-}
 #wheel1-thumb:hover{
     cursor: pointer;
 }
