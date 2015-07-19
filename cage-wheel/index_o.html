@@ -13,11 +13,10 @@
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/skeleton.css">
 	<link rel="stylesheet" href="css/wheel.css" />
-	<link rel="stylesheet" href="css/rrssb.css" />
 
-	<!--<audio id="audio">
+	<audio id="audio">
 		<source src="audio/wheel.mp3" type="audio/mp3" preload="auto"/>
-	</audio>-->
+	</audio>
 </head>
 <script>
 window.fbAsyncInit = function() {
@@ -76,7 +75,7 @@ window.twttr = (function(d, s, id) {
 function sendTweet() {
 	var message = "Check out the Cage Wheel!";
 	var url = "bit.ly/1JT1mCY";
-	console.log(currentQuote);
+	//console.log(currentQuote);
 	if(currentQuote){
 		message = currentQuote;
 	}
@@ -94,14 +93,29 @@ function sendTweet() {
 			<div class="row">
 				<div class="one-half column">
 					<div class="box1">
-						<img class="wheel" src="images/cage-wheel.png">
-						<img class="marker" src="images/marker.png">
+						<img class='wheel' src='images/cage-wheel.png'>
+    					<img class='marker' src='images/marker.png'>
+							<!--<h3>Choose your Cage: </h3>
+						     <select class="u-half-width">
+        						 <option value="Option 1">1</option>
+        						 <option value="Option 2">2</option>
+       							 <option value="Option 3">3</option>
+      						</select>-->
+      						  <!--<label class="example-send-yourself-copy">
+    							<input type="checkbox">
+    							<span class="label-body">Send a copy to yourself</span>
+  							</label>-->
 					</div>
 				</div>
 				<div class="one-half column">
 					<div class="box2">
 						<div align="center" id="results" class="results"><h1>Click the wheel to spin.</h1></div>
 						<div align="center"id="footer" onmouseover="sendTweet();">
+							  <img id="wheel1-thumb" src="images/thumb1.png">
+							  <img id="wheel2-thumb" src="images/thumb2.png">
+							  <img id="wheel3-thumb" src="images/thumb3.png">
+							  <img id="mystery-thumb" src="images/thumb-mystery.png">
+							  <br>
 							  <a id="twitter-icon" class="btn btn-social-icon btn-twitter" href="https://twitter.com/intent/tweet?text=Check%20out%20the%20Cage%20Wheel!%20bit.ly/1JT1mCY&amp;hashtags=CageWheel" onmouseenter="sendTweet();" onclick="sendTweet();">
     								<i class="icon-twitter"></i>
   								</a>
@@ -133,7 +147,6 @@ function sendTweet() {
 		<script type="text/javascript" src="http://ricostacruz.com/jquery.transit/jquery.transit.min.js"></script>
 		<script type="text/javascript" src="js/rrssb.min.js"></script>
 		<script type="text/javascript" src="js/tmdb.js"></script>
-		<script type="text/javascript" src="js/wheel.js"></script>
-		<script src="js/rrssb.min.js"></script>
+		<script type="text/javascript" src="js/wheel_o.js"></script>
 	</body>
 	</html>

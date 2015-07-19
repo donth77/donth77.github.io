@@ -65,7 +65,7 @@ h2 {
 
     }
     #footer p {
-        font-size: 45%;
+        font-size: 75%;
         padding: 0;
         margin: 0;
     }
@@ -133,7 +133,7 @@ h2 {
 
     }
     #footer p {
-        font-size: 45%;
+        font-size: 75%;
         padding: 0;
         margin: 0;
 
@@ -155,7 +155,7 @@ h2 {
 @media (min-width: 1000px) {
     .marker {
         position: absolute;
-        left: 22vw;
+        left: 21.9vw;
         top: 2vh;
         margin: auto;
         display: block;
@@ -165,7 +165,16 @@ h2 {
 @media (min-height: 1000px) {
     .marker {
         position: absolute;
-        left: 21.5vw;
+        left: 21.6vw;
+        top: 1vh;
+        margin: auto;
+        display: block;
+    }
+}
+@media (min-height: 1200px) {
+    .marker {
+        position: absolute;
+        left: 21.7vw;
         top: 1vh;
         margin: auto;
         display: block;
@@ -175,6 +184,15 @@ h2 {
     .marker {
         position: absolute;
         left: 21.9vw;
+        top: 1vh;
+        margin: auto;
+        display: block;
+    }
+}
+@media (min-width: 1700px) {
+    .marker {
+        position: absolute;
+        left: 22.2vw;
         top: 1vh;
         margin: auto;
         display: block;
@@ -204,4 +222,58 @@ h2 {
     width: 70%;
     display: block;
     margin: auto;
+}
+
+h3{
+    font-size: 75%;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0.04em;
+    display: block;
+    left: 55%;
+}
+
+select{
+    position: relative;
+    display: block;
+    left: 55%;
+    width: 15%;
+    height: 30px;
+}
+
+#wheel1-thumb{
+    width: 7%;
+    display: inline-block;
+    margin-bottom: 1%;
+}
+#wheel2-thumb{
+    width: 7%;
+    display: inline-block;
+    margin-bottom: 1%;
+}
+#wheel3-thumb{
+    width: 7%;
+    display: inline-block;
+    margin-bottom: 1%;
+}
+#mystery-thumb{
+    width: 7%;
+    display: inline-block;
+    margin-bottom: 1%;
+}
+#wheel1-thumb:hover{
+    cursor: pointer;
+}
+#wheel2-thumb:hover{
+    cursor: pointer;
+}
+#wheel3-thumb:hover{
+    cursor: pointer;
+}
+#mystery-thumb:hover{
+    cursor: pointer;
+    opacity: 0.85;
 }

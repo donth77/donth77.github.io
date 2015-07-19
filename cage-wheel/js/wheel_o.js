@@ -1,6 +1,20 @@
+function sleepFor(sleepDuration){
+  var now = new Date().getTime();
+  while(new Date().getTime() < now + sleepDuration){} 
+}
+
+var wheelSound = $("#audio")[0];
+
 var movieIDs = [754, 33927, 6963, 1250, 7091, 1830, 7270, 11699, 10427, 451, 12518, 483, 1701, 2757, 1738, 23483, 19053, 9708, 2059, 157847,
-    378, 9679, 2039, 795
+378, 9679, 2039, 795
 ];
+var movieIDs2 = [71676, 1722, 1852, 242310, 6637, 13811, 10013, 70578, 13184, 47327, 6071, 74998, 9802, 47359, 27022, 8688, 83105, 23047, 10660, 8224,
+5994, 12100, 8649, 28028
+];
+var movieIDs3 = [277546, 297596, 49519, 71642, 218043, 16577, 13342, 199373, 64837, 232, 35257, 285923, 11296, 9906, 112019, 2148, 19585, 6472, 23719, 6470, 
+31000, 289720, 127493, 36630
+];
+
 var movieCache = {};
 
 var movieQuotes = ["I want to take his face... off.", "Fuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuck!", "People don't throw things at me any more. Maybe because I carry a bow around.", 
@@ -15,14 +29,17 @@ var movieQuotes = ["I want to take his face... off.", "Fuuuuuuuuuuuuuuuuuuuuuuuu
 
 var currentMovie, currentQuote;
 
+var currentWheel = 1;
+setSelected();
+
+var spinning = false;
+
 $(function() {
     window.WHEEL = {
 
         cache: {},
 
         init: function() {
-            var wheelSound = $("#audio")[0];
-
             var _this = this;
             this.cache.wheel = $('.wheel');
             this.cache.wheelMarker = $('.marker');
@@ -32,8 +49,6 @@ $(function() {
                 e.preventDefault();
                 if (!$(this).hasClass('disabled')) {
                     _this.spin();
-                    wheelSound.load();
-                    wheelSound.play();
                 }
             });
             this.resetSpin();
@@ -41,6 +56,10 @@ $(function() {
         },
 
         spin: function() {
+            wheelSound.load();
+            wheelSound.play();
+
+            spinning = true;
             $("#results").html("<h1>Spinning...</h1>");
 
             var _this = this;
@@ -53,15 +72,17 @@ $(function() {
             var deg = 1500 + Math.round(rand);
             duration = 17000; 
 
+            //duration = 500;
+
             _this.cache.wheelPos = deg;
 
 
             this.cache.wheel.transition({
-                    rotate: '0deg'
-                }, 0)
-                .transition({
-                    rotate: deg + 'deg'
-                }, duration, 'easeOutCubic');
+                rotate: '0deg'
+            }, 0)
+            .transition({
+                rotate: deg + 'deg'
+            }, duration, 'easeOutCubic');
 
 
             _this.cache.wheelMarker.transition({
@@ -83,7 +104,14 @@ $(function() {
 
                 segment = getSegment(degrees);
 
-                var id = movieIDs[segment];
+                var id;
+                if(currentWheel == 1){
+                    id = movieIDs[segment];
+                }else if(currentWheel == 2){
+                    id = movieIDs2[segment];
+                }else if(currentWheel == 3){
+                    id = movieIDs3[segment];
+                }
 
                 currentQuote = movieQuotes[segment];
 
@@ -95,19 +123,19 @@ $(function() {
 
                     if (movieCache[id] == null) {
                         tmdb.call("/movie/" + id, {
-                                "append_to_response": "trailers"
-                            },
-                            function(data) {
-                                movieCache[id] = data;
-                                basicData = data;
-                                displayResults(basicData);
+                            "append_to_response": "trailers"
+                        },
+                        function(data) {
+                            movieCache[id] = data;
+                            basicData = data;
+                            displayResults(basicData);
 
 
 
-                            },
-                            function(e) {
-                                console.log("Error: " + e);
-                            }
+                        },
+                        function(e) {
+                            console.log("Error: " + e);
+                        }
                         )
                     } else {
                         basicData = movieCache[id];
@@ -121,53 +149,194 @@ $(function() {
             }, duration);
 
 
-        },
+},
 
-        resetSpin: function() {
-            this.cache.wheel.transition({
-                rotate: '0deg'
-            }, 0);
-            this.cache.wheelPos = 0;
-        }
+resetSpin: function() {
+    this.cache.wheel.transition({
+        rotate: '0deg'
+    }, 0);
+    this.cache.wheelPos = 0;
+}
 
+}
+
+var fadeDuration = 200;
+$("#wheel1-thumb").click(function(){
+    if(!(currentWheel == 1) && !spinning){
+        currentWheel = 1;
+        setSelected();
+        $(".wheel").fadeOut(fadeDuration, function() {
+            $(".wheel").attr("src", "images/cage-wheel.png");
+        })
+        .fadeIn(fadeDuration, function(){
+            window.WHEEL.resetSpin();
+        });
+        window.WHEEL.resetSpin();
     }
-
-    function getSegment(degrees) {
-        var segment;
-        for (var i = 1; i <= 24; i++) {
-            if (degrees < i * 15) {
-                segment = i - 1;
-                i = 25;
+});
+$("#wheel2-thumb").click(function(){
+    if(!(currentWheel == 2) && !spinning){
+        currentWheel = 2;
+        setSelected();
+        $(".wheel").fadeOut(fadeDuration, function() {
+            $(".wheel").attr("src", "images/cage-wheel2.png");
+        })
+        .fadeIn(fadeDuration, function(){
+            window.WHEEL.resetSpin();
+        });
+    }
+});
+$("#wheel3-thumb").click(function(){
+    if(!(currentWheel == 3) && !spinning){
+        currentWheel = 3;
+        setSelected();
+        $(".wheel").fadeOut(fadeDuration, function() {
+            $(".wheel").attr("src", "images/cage-wheel3.png");
+        })
+        .fadeIn(fadeDuration, function(){
+            window.WHEEL.resetSpin();
+        });
+    }
+});
+$("#mystery-thumb").click(function(){
+    if(!spinning){
+        currentWheel = Math.floor(Math.random() * 3) + 1;
+        setSelected();
+        window.WHEEL.resetSpin(); 
+        $(".wheel").fadeOut(fadeDuration, function() {
+            if(currentWheel == 1){
+                $(".wheel").attr("src", "images/cage-wheel.png");
+            }else if(currentWheel == 2){
+                $(".wheel").attr("src", "images/cage-wheel2.png");
+            }else if(currentWheel == 3){
+                $(".wheel").attr("src", "images/cage-wheel3.png");
             }
+        })
+        .fadeIn(fadeDuration, function(){
+            window.WHEEL.spin();
+        });
+    }
+});
+
+function getSegment(degrees) {
+    var segment;
+    for (var i = 1; i <= 24; i++) {
+        if (degrees < i * 15) {
+            segment = i - 1;
+            i = 25;
         }
-        return segment;
+    }
+    return segment;
+}
+
+function displayResults(data) {
+    spinning = false;
+
+    var releaseDate = new Date(data.release_date);
+    var year = releaseDate.getFullYear();
+
+    currentMovie = data.id;
+
+    var title;
+    if(currentMovie == 242310){
+        title = "Rage";
+    }else if(currentMovie == 71642){
+        title = "Time To Kill";
+    }else{
+        title = data.original_title;
     }
 
-    function displayResults(data) {
-        var releaseDate = new Date(data.release_date);
-        var year = releaseDate.getFullYear();
-
-        var watchLink = "http://www.fan.tv/movies/" + data.id;
-
-        currentMovie = data.id;
-
-        var tagline;
-        if(data.id == 2757){
-            tagline = "Charlie Kaufman writes the way he lives... With Great Difficulty";
-        }else{
-            tagline = data.tagline;
-        }
-
-        $("#results").html(
-            "<h1>" + data.original_title + "(" + year + ")" + "</h1>" +
-            "<h2>" + tagline + "</h2>" +
-            "<br>" +
-            "<div class='embed-container'><iframe src='http://www.youtube.com/embed/" + 
-            data.trailers.youtube[0].source +
-            "' frameborder='0' allowfullscreen></iframe></div>" + 
-            "<br>" + 
-            "<a class='button button-primary' href='" + watchLink + "' target='_blank'>Watch online</a>");
+    var tagline;
+    if(currentMovie == 2757){
+        tagline = "Charlie Kaufman writes the way he lives... With Great Difficulty";
+    }else{
+        tagline = data.tagline;
     }
 
-    window.WHEEL.init();
+    var youtubeURL = "http://www.youtube.com/embed/";
+    if(currentMovie == 23047){
+        youtubeURL += "YHR56TdWC44";
+    }else if(currentMovie == 28028){
+        youtubeURL += "gr2yb3Vzc1k";
+    }else if(currentMovie == 285923){
+        youtubeURL += "lZad00qYMbQ";
+    }else if(currentMovie == 112019){
+        youtubeURL += "gCi3ZQWA6j8";
+    }else if(currentMovie == 64837){
+        youtubeURL += "PQJvtY47_Rw";
+    }else if(currentMovie == 71642){
+        youtubeURL += "DJi5zNgpKDo";
+    }else if(currentMovie == 35257){
+        youtubeURL += "HEStW6KkSBg";
+    }else{
+        youtubeURL += data.trailers.youtube[0].source;
+    }
+
+    var watchLink = "http://www.fan.tv/movies/";
+    if(currentMovie == 277546){
+        watchLink += 251344;
+    }else if(currentMovie == 218043){
+        watchLink += 205417;
+    }else if(currentMovie == 289720){
+        watchLink += 263552;
+    }else if(currentMovie == 242310){
+        watchLink += 220998;
+    }else if(currentMovie == 199373){
+        watchLink += 193814;
+    }else if(currentMovie == 297596){
+        watchLink = "http://putlocker.tn/dying-of-the-light/";
+    }else{
+        watchLink += currentMovie;
+    }
+
+    $("#results").html(
+        "<h1>" + title + "(" + year + ")" + "</h1>" +
+        "<h2>" + tagline + "</h2>" +
+        "<br>" +
+        "<div class='embed-container'><iframe src='" + 
+        youtubeURL +
+        "' frameborder='0' allowfullscreen></iframe></div>" + 
+        "<br>" + 
+        "<a class='button button-primary' href='" + watchLink + "' target='_blank'>Watch online</a>");
+}
+
+window.WHEEL.init();
+});
+
+
+function setSelected(){
+    if(currentWheel == 1){
+        $("#wheel1-thumb").css("opacity", "0.7");
+        $("#wheel2-thumb").css("opacity", "1");
+        $("#wheel3-thumb").css("opacity", "1");
+    }else if(currentWheel == 2){
+        $("#wheel2-thumb").css("opacity", "0.7");
+        $("#wheel1-thumb").css("opacity", "1");
+        $("#wheel3-thumb").css("opacity", "1");
+    }else if(currentWheel == 3){
+        $("#wheel3-thumb").css("opacity", "0.7");
+        $("#wheel1-thumb").css("opacity", "1");
+        $("#wheel2-thumb").css("opacity", "1");
+    }
+}
+$("#wheel1-thumb").mouseover(function() {
+    $(this).css("opacity", "0.7");
+}).mouseout(function() {
+    if(!(currentWheel == 1)){
+        $(this).css("opacity", "1");
+    }
+});
+$("#wheel2-thumb").mouseover(function() {
+    $(this).css("opacity", "0.7");
+}).mouseout(function() {
+    if(!(currentWheel == 2)){
+        $(this).css("opacity", "1");
+    }
+});
+$("#wheel3-thumb").mouseover(function() {
+    $(this).css("opacity", "0.7");
+}).mouseout(function() {
+    if(!(currentWheel == 3)){
+        $(this).css("opacity", "1");
+    }
 });
