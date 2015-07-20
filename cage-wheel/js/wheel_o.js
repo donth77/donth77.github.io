@@ -24,8 +24,19 @@ var movieQuotes = ["I want to take his face... off.", "Fuuuuuuuuuuuuuuuuuuuuuuuu
 "Put... the bunny... back... in the box.", "You are what you love, not what loves you.", "I've seen every possible ending.",
 "Oh, child... You always knock me for a loop!", "All right, but when they attack the car, save the radio.", "OH, NO! NOT THE BEES! NOT THE BEES!",
 "I'm gonna steal the Declaration of Independence!", "I went through a windshield at 4 AM and I don't give a fuck.", "I'll be taking these Huggies and whatever cash ya got.",
-"I just stole fifty cars in one night!", "I lost my hand! I lost my bride!", "I would rather have had one touch of her hand than eternity without it."]
+"I just stole fifty cars in one night!", "I lost my hand! I lost my bride!", "I would rather have had one touch of her hand than eternity without it."];
 
+var movieQuotes2 = ["You will tell me or I will eat your stinking soul!", "I have always found something in life worth singing about and for that I cannot apologize.", "You... kept me... alive.", 
+"How deep is hell?", "I'm gonna kidnap the President of the United States.", "I think shit just happens. But that's me." , "Yeah, girls mature faster than guys.", "In your hands they go back to being nothing but rocks.", 
+"Where there's money, there's competition and the guy paying me usually wins.", "What's he gonna do? Not let me back in?", "Balls, Attitude, Direction.", "The hungry rabbit jumps.", "How in the name of ZEUS'S BUTTHOLE did you get out of your cell?",
+"You mean America's high-flyin' red-white-and-blue bird of freedom?", "I had a dream. You were insulting me, Dave. Repeatedly.", "Who gives a shit if you're sorry?", "That makes me sound like some kind of fancy boy!", "Whomever slays the most men drinks for free.", 
+"Decaf, please. I've reached my target heart rate for the day.", "DIE! FUCKER DIE! DIE!" , "I want that cake!", "What a magical heap of Navajo horseshit!", "Where are the Band-Aids? This IS an ambulance, isn't it?", "Now I know why Mother calls you \"a natural born whore.\""];
+
+
+var movieQuotes3 = ["I'm gonna make sure these bastards pay for what they've taken from you." ,"You've got your head so far up Obama's ass that all you can see is his shit any more.", "Tomorrow isn't a place. It's-it's-it... Ugh! You can't see it!", "Wanna smoke?", 
+"I know you all want answers, and believe me, so do I.", "It's going to make him perfect, PERFECT!", "Brad, your sister's turning into a fox!", "You know, he stalks them like his next trophy animal, he rapes them and kills them.", "I thought I was a man already.","You know, if there were gangs around like in the old days, I'd be running things, not you.",
+"Ooooohhhhh!", "THIS IS MY VTTSTAHHHHHH! AHAHAHAHAHA! AHAHAHAHA!", "You ain't gonna fly any more than I could, Birdy.", "Curse you, rock, a curse upon your children!", "Is anybody hurt? Can I give somebody a lift?", "Bugle Boy, me Jesse James!", "I'm a mole. I got a thing for worms.", "And Tess... Get in the god damn chair.", 
+"Ring Dings and milk? Oh sure. Then we'll get some balloons and go to the puppet show.", "I AM THE GREATEST!", "I know for all your talk, you're about the whitest damn black man I ever met.", "You want my blood?", "That was for the eight years in prison.", " I wanna shake you naked and eat you alive..."];
 
 var currentMovie, currentQuote;
 
@@ -57,7 +68,7 @@ $(function() {
 
         spin: function() {
             wheelSound.load();
-            wheelSound.play();
+            //wheelSound.play();
 
             spinning = true;
             $("#results").html("<h1>Spinning...</h1>");
@@ -72,7 +83,7 @@ $(function() {
             var deg = 1500 + Math.round(rand);
             duration = 17000; 
 
-            //duration = 500;
+            duration = 500;
 
             _this.cache.wheelPos = deg;
 
@@ -107,13 +118,14 @@ $(function() {
                 var id;
                 if(currentWheel == 1){
                     id = movieIDs[segment];
+                    currentQuote = movieQuotes[segment];
                 }else if(currentWheel == 2){
                     id = movieIDs2[segment];
+                    currentQuote = movieQuotes2[segment];
                 }else if(currentWheel == 3){
                     id = movieIDs3[segment];
+                    currentQuote = movieQuotes3[segment];
                 }
-
-                currentQuote = movieQuotes[segment];
 
                 setTimeout(function() {
                     $("#results").show();
