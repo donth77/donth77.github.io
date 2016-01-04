@@ -75,7 +75,6 @@ window.twttr = (function(d, s, id) {
 function sendTweet() {
 	var message = "Check out the Cage Wheel!";
 	var url = "bit.ly/1JT1mCY";
-	//console.log(currentQuote);
 	if(currentQuote){
 		message = currentQuote;
 	}
@@ -95,16 +94,6 @@ function sendTweet() {
 					<div class="box1">
 						<img class='wheel' src='images/cage-wheel.png'>
     					<img class='marker' src='images/marker.png'>
-							<!--<h3>Choose your Cage: </h3>
-						     <select class="u-half-width">
-        						 <option value="Option 1">1</option>
-        						 <option value="Option 2">2</option>
-       							 <option value="Option 3">3</option>
-      						</select>-->
-      						  <!--<label class="example-send-yourself-copy">
-    							<input type="checkbox">
-    							<span class="label-body">Send a copy to yourself</span>
-  							</label>-->
 					</div>
 				</div>
 				<div class="one-half column">
@@ -122,6 +111,8 @@ function sendTweet() {
 		
 							&nbsp;
 							<a class="btn btn-social-icon btn-facebook" onclick="facebookPost();" ><i class="icon-facebook"></i></a>
+							&nbsp;
+							<a class="btn btn-social-icon btn-google" href="https://plus.google.com/share?url=http%3A%2F%2Fcagewheel.com%2F" target="_blank"><i class="icon-google-plus"></i></a>
 							<p>Brought to you by <a id="footlink" href="https://www.facebook.com/NicCageFilmFestival" target="_blank">Nic Cage Film Festival</a>
 								<br>
 								Powered by <a id="footlink" href="https://jquery.com/" target="_blank">jQuery</a>, <a id="footlink"  href="http://ricostacruz.com/jquery.transit/" target="_blank">Transit</a>, and <a id="footlink" href="https://www.themoviedb.org/" target="_blank">TMDb</a></p>
@@ -134,13 +125,13 @@ function sendTweet() {
 
 
 		<script>
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		/**(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
 		ga('create', 'UA-64923708-1', 'auto');
-		ga('send', 'pageview');
+		ga('send', 'pageview');**/
 
 		</script>
 		<script type="text/javascript" src="js/jquery-git.js"></script>

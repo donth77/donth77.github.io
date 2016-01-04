@@ -1,8 +1,3 @@
-function sleepFor(sleepDuration){
-  var now = new Date().getTime();
-  while(new Date().getTime() < now + sleepDuration){} 
-}
-
 var wheelSound = $("#audio")[0];
 
 var movieIDs = [754, 33927, 6963, 1250, 7091, 1830, 7270, 11699, 10427, 451, 12518, 483, 1701, 2757, 1738, 23483, 19053, 9708, 2059, 157847,
@@ -38,6 +33,22 @@ var movieQuotes3 = ["I'm gonna make sure these bastards pay for what they've tak
 "Ooooohhhhh!", "THIS IS MY VTTSTAHHHHHH! AHAHAHAHAHA! AHAHAHAHA!", "You ain't gonna fly any more than I could, Birdy.", "Curse you, rock, a curse upon your children!", "Is anybody hurt? Can I give somebody a lift?", "Bugle Boy, me Jesse James!", "I'm a mole. I got a thing for worms.", "And Tess... Get in the god damn chair.", 
 "Ring Dings and milk? Oh sure. Then we'll get some balloons and go to the puppet show.", "I AM THE GREATEST!", "I know for all your talk, you're about the whitest damn black man I ever met.", "You want my blood?", "That was for the eight years in prison.", " I wanna shake you naked and eat you alive..."];
 
+
+for(var i = 0; i < movieQuotes.length; i++){
+    console.log(movieQuotes2[i]);
+}
+
+function getQuote(index){
+    return movieQuotes[index];
+}
+function getQuote2(index){
+    return movieQuotes[index];
+}
+function getQuote3(index){
+    return movieQuotes[index];
+}
+
+
 var currentMovie, currentQuote;
 
 var currentWheel = 1;
@@ -68,7 +79,7 @@ $(function() {
 
         spin: function() {
             wheelSound.load();
-            //wheelSound.play();
+            wheelSound.play();
 
             spinning = true;
             $("#results").html("<h1>Spinning...</h1>");
@@ -82,8 +93,6 @@ $(function() {
             var rand = Math.random() * 1500;
             var deg = 1500 + Math.round(rand);
             duration = 17000; 
-
-            duration = 500;
 
             _this.cache.wheelPos = deg;
 
@@ -280,6 +289,8 @@ function displayResults(data) {
         youtubeURL += "DJi5zNgpKDo";
     }else if(currentMovie == 35257){
         youtubeURL += "HEStW6KkSBg";
+    }else if(currentMovie == 47359){
+        youtubeURL += "xiZd9cftM8s";
     }else{
         youtubeURL += data.trailers.youtube[0].source;
     }
