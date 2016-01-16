@@ -1,0 +1,80 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="styles.css"/>
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+
+
+	<title>Game of Life</title>
+</head>
+<body>
+	<canvas id="gameCanvas" width="1000" height="800"></canvas>
+	<br>
+	<button id="step" onclick="nextGeneration();">Step</button>
+	<button id="run" onclick="runGame();">Run</button>
+	<button id="pause" onclick="pauseGame();">Pause</button>
+	<button id="create" onclick="createLife('gospergun');">Glider Gun</button>
+	<button id="create" onclick="createLife('random');">Random</button>
+	<button id="clear" onclick="clearGame();">Clear</button>
+	<div id="generation"><p>Generation 0</p></div>
+
+
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+	<script>
+	var canvas = document.getElementById('gameCanvas');
+	var context = canvas.getContext('2d');
+	var cellSize = 10;
+	var val = 0;
+	</script>
+	<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+	<script src="utils.js"></script>
+	<script src="game.js"></script>
+	<script>
+
+	var reqID;
+	window.requestAnimFrame = (function(callback) {
+		return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
+		function(callback) {
+			window.setTimeout(callback, 1000 / 60);
+		};
+	})();
+	game.init();
+
+	function nextGeneration(){
+		game.step();
+		game.drawGrid();
+	}
+	function gameLoop(){
+		game.step();
+		game.drawGrid();
+		reqID = requestAnimFrame(function() {
+			gameLoop();
+			sleepFor(val);
+		});
+	}
+	function runGame(){
+		if(!reqID){
+			game.running = true;
+			gameLoop();
+		}
+	}
+	function pauseGame(){
+		if(reqID){
+			window.cancelAnimationFrame(reqID);
+			reqID = undefined;	
+			game.running = false;
+		}
+	}
+	function createLife(pattern){
+		game.createLife(pattern);
+	}
+	function clearGame(){
+		game.clearGrid();
+		game.drawGrid();
+		pauseGame();
+		game.reset();
+	}
+
+	</script>
+</body>
+</html>
