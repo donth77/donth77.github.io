@@ -1,6 +1,5 @@
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="styles.css"/>
 	<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
 
 
@@ -17,20 +16,20 @@
 	<button id="clear" onclick="clearGame();">Clear</button>
 	<div id="generation"><p>Generation 0</p></div>
 
-
-	<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 	<script>
 	var canvas = document.getElementById('gameCanvas');
 	var context = canvas.getContext('2d');
 	var cellSize = 10;
 	var val = 0;
 	</script>
-	<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-	<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 	<script src="utils.js"></script>
 	<script src="game.js"></script>
 	<script>
-
+	/**
+	  Thomas Donohue
+	  Conway's Game of Life
+	  tdonohu1.me
+	**/
 	var reqID;
 	window.requestAnimFrame = (function(callback) {
 		return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||

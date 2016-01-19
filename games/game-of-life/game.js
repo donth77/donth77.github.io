@@ -1,3 +1,8 @@
+/**
+  Thomas Donohue
+  Conway's Game of Life
+  tdonohu1.me
+**/
  var Mouse = { 
   x: 0,
   y: 0
@@ -54,7 +59,7 @@ var game = {
 
     step: function(){
       this.generation++;
-      $("#generation").html("<p>" + "Generation " + this.generation + "</p>");
+      document.getElementById("generation").innerHTML = "<p>" + "Generation " + this.generation + "</p>";
 
       var cells = [];
       var cellPos = [];
@@ -195,6 +200,6 @@ var game = {
     reset: function(){
       this.generation = 0;
       this.running = false;
-      $("#generation").html("<p>" + "Generation " + this.generation + "</p>");
+      document.getElementById("generation").innerHTML = "<p>" + "Generation " + this.generation + "</p>";
     }
   };

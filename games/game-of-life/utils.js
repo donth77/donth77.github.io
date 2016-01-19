@@ -1,3 +1,8 @@
+/**
+  Thomas Donohue
+  Conway's Game of Life
+  tdonohu1.me
+**/
 function drawGrid(context, cellsize) {
     for (var x = 0; x < context.canvas.width + 1;x += cellsize) {
       context.moveTo(x, 0);
