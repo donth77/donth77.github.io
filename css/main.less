@@ -1,0 +1,96 @@
+@import "bootstrap.min.css";
+// @import "font-awesome.min.css";
+
+@white: #ffffff;
+@color-text: #333;
+@color-text-secondary: #999;
+@color-primary: #315A88;
+@color-primary-light: #98acc3;
+@color-hr: #ddd;
+
+.gradient(@angle, @start, @end) {
+    background: -webkit-linear-gradient(@angle, @start @end);
+    background: -o-linear-gradient(@angle, @start, @end);
+    background: -moz-linear-gradient(@angle, @start, @end);
+    background: linear-gradient(@angle, @start, @end);
+}
+
+body {
+    // font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: @color-text;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5em;
+}
+
+.banner {
+    padding-top: 48px;
+    padding-bottom: 48px;
+    background: @color-primary;
+    color: @white;
+    .gradient(45deg, @color-primary, @color-primary-light);
+}
+
+#header {
+    font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+    h1 {
+        letter-spacing: 1px;
+        font-weight: 500;
+    }
+
+    h3 {
+        font-weight: 400;
+    }
+}
+
+hr {
+    border-top: 1px solid @color-hr;
+    width: 85%;
+}
+
+#projects {
+    .project-title {
+        font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-weight: 400;
+    }
+
+    ul {
+        padding-left: 24px;
+    }
+
+    li {
+        font-size: 16px;
+    }
+}
+
+.image-container {
+    margin: 15px;
+
+    div {
+        height: initial;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    .slick-prev:before, .slick-next:before {
+        color: @color-text-secondary;
+    }
+}
+
+#footer {
+    a {
+        color: @color-text
+    }
+
+    p {
+        font-size: 14px;
+        color: @color-text-secondary;
+    }
+
+    padding-bottom: 32px;
+}

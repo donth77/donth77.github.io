@@ -1,0 +1,76 @@
+@import "bootstrap.min.css";
+body {
+  color: #333;
+}
+p {
+  font-size: 16px;
+  line-height: 1.5em;
+}
+.banner {
+  padding-top: 48px;
+  padding-bottom: 48px;
+  background: #315A88;
+  color: #ffffff;
+  background: -webkit-linear-gradient(45deg, #315A88 #98acc3);
+  background: -o-linear-gradient(45deg, #315A88, #98acc3);
+  background: -moz-linear-gradient(45deg, #315A88, #98acc3);
+  background: linear-gradient(45deg, #315A88, #98acc3);
+}
+#header {
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+#header h1 {
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+#header h3 {
+  font-weight: 400;
+}
+hr {
+  border-top: 1px solid #ddd;
+  width: 85%;
+}
+#projects .project-title {
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+#projects ul {
+  padding-left: 24px;
+}
+#projects li {
+  font-size: 16px;
+}
+.image-container {
+  margin: 15px;
+}
+.image-container div {
+  height: initial;
+}
+.image-container img {
+  width: 100%;
+}
+.image-container .slick-prev:before,
+.image-container .slick-next:before {
+  color: #999;
+}
+#footer {
+  padding-bottom: 32px;
+}
+#footer a {
+  color: #333;
+}
+#footer p {
+  font-size: 14px;
+  color: #999;
+}
+.fa-stack-overflow.fa-2x {
+  position: relative;
+  top: -.21em;
+  padding: .2em;
+  font-size: 1.25em;
+  color: #eee;
+  background-color: #333;
+  border-radius: 0.2em;
+  width: 1.4em;
+  text-align: center;
+}
